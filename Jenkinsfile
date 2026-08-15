@@ -8,7 +8,9 @@ pipeline {
                 withCredentials([aws(credentialsId: 'AWS-CREDS-LOGIN',
                                      accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                                      secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')])
-                sh 'terraform init'
+                {
+                    sh 'terraform init'
+                }
             }
         }
 
