@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'terraform'
+        label 'terraforms3'
     }
 
     stages {
