@@ -9,18 +9,15 @@ pipeline {
             steps {
                 withCredentials([aws(credentialsId: 'AWS-TOKEN',
                                      accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')])
-                
-                {
+                                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                )]) {
                 sh 
                     '''
                 echo "AWS_ACCESS_KEY_ID is set: ${AWS_ACCESS_KEY_ID:+YES}"
                 echo "AWS_SECRET_ACCESS_KEY is set: ${AWS_SECRET_ACCESS_KEY:+YES}"
                 aws sts get-caller-identity
                    '''
-                }
-                {
-                    sh 'terraform init'
+                sh 'terraform init'
                 }
             }
         }
