@@ -5,5 +5,5 @@ variable "aws_region" {
 
 variable "bucket_name"{
   type = string
-  default = "myfirstbucket85288258"
+  default = "myfirstbucket8528825888"
 }
